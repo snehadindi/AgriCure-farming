@@ -9,10 +9,8 @@ AgriCure is a web-based platform designed to assist farmers in making informed d
 
 ## 📂 Project Structure
 
-/template
- ├── raw.html  # Contains HTML and CSS in a single file
-/static
- ├── images/
+index.html  # Contains HTML and CSS in a single file
+images/
 
 
 ## 🛠 Technologies Used
@@ -22,16 +20,16 @@ AgriCure is a web-based platform designed to assist farmers in making informed d
 ## 🚀 Getting Started
 1. Clone the repository:
    bash
-   git clone https://github.com/snehadindi/AgriCure.git
+   git clone https://github.com/snehadindi/AgriCure-farming.git
    
 2. Navigate to the project folder:
    bash
-   cd AgriCure
+   cd AgriCure-farming
    
-3. Open raw.html in your browser to view the website.
+3. Open index.html in your browser to view the website.
 
 ## 🎨 Preview
-You can check the live demo [here](#).
+You can check the live demo [https://snehadindi.github.io/AgriCure-farming/](#).
 
 ## 📧 Contact
 For any queries, feel free to reach out at dindisneha@gmail.com
