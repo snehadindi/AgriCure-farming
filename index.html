@@ -666,6 +666,25 @@ header .navbar {
     gap: 20px;
   }
 }
+      body {
+        transition: background 0.3s ease-in-out;
+      }
+      .dark-mode {
+        background: #1e1e1e;
+        color: white;
+      }
+      .dark-mode .navbar, .dark-mode .footer-section {
+        background: #333;
+      }
+      .toggle-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+      }
+      img {
+        loading: lazy;
+      }
     </style>
   </head>
   <body>
@@ -720,6 +739,16 @@ header .navbar {
           </div>
         </div>
       </section>
+      <div class="toggle-container">
+      <button onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+    <header class="navbar">AgriCure</header>
+    <section class="weather-section">
+      <h2>Current Weather</h2>
+      <p id="weather-info">Loading...</p>
+    </section>
       <section class="menu-section" id="menu">
         <h2 class="section-title">Staple Crops of India</h2>
         <div class="section-content">
@@ -1280,6 +1309,18 @@ header .navbar {
     <!-- Linking Swiper script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Linking custom script -->
-    <script src="script.js"></script>
+      <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+
+      async function fetchWeather() {
+        const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Delhi&appid=YOUR_API_KEY&units=metric");
+        const data = await response.json();
+        document.getElementById("weather-info").textContent = `Temperature: ${data.main.temp}°C, ${data.weather[0].description}`;
+      }
+
+      fetchWeather();
+    </script>
   </body>
 </html>
